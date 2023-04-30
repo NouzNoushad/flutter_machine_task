@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_machine_task/core/colors.dart';
 import 'package:flutter_machine_task/screens/home_page.dart';
 
 class SplashScreenPage extends StatefulWidget {
@@ -22,13 +23,33 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.teal,
       body: Center(
-          child: Text(
-        'Users App',
-        style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.w600, color: Colors.white),
+          child: CircleAvatar(
+        radius: 150,
+        backgroundColor: backgroundColor,
+        child: CircleAvatar(
+          radius: 140,
+          backgroundColor: primaryColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.person_outline,
+                size: 100,
+                color: backgroundColor,
+              ),
+              Text(
+                'Users App',
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white),
+              ),
+            ],
+          ),
+        ),
       )),
     );
   }
